@@ -6,7 +6,7 @@ import (
 	"github.com/golang/glog"
 	"github.com/jawher/mow.cli"
 	"github.com/kubernetes-incubator/external-storage/lib/controller"
-	freenasProvisioner "github.com/travisghansen/freenas-iscsi-provisioner/provisioner"
+	freenasProvisioner "github.com/jakekeeys/freenas-iscsi-provisioner/provisioner"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"

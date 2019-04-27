@@ -30,7 +30,6 @@ require (
 	github.com/pborman/uuid v0.0.0-20150603214016-ca53cad383ca
 	github.com/spf13/pflag v0.0.0-20170130214245-9ff6c6923cff
 	github.com/spf13/viper v1.0.2
-	github.com/travisghansen/freenas-iscsi-provisioner v0.0.0-20180712034001-3efd03219133
 	github.com/ugorji/go v0.0.0-20170107133203-ded73eae5db7
 	golang.org/x/crypto v0.0.0-20161006174701-d172538b2cfc
 	golang.org/x/net v0.0.0-20160715184138-e90d6d0afc4c

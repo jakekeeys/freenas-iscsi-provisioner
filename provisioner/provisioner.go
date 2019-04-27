@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/golang/glog"
 	"github.com/kubernetes-incubator/external-storage/lib/controller"
-	"github.com/travisghansen/freenas-iscsi-provisioner/freenas"
+	"github.com/jakekeeys/freenas-iscsi-provisioner/freenas"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/pkg/api/v1"
