@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/travisghansen/freenas-iscsi-provisioner/cli"
+	"github.com/jakekeeys/freenas-iscsi-provisioner/cli"
 )
 
 const (

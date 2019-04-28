@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/golang/glog"
 	"github.com/kubernetes-incubator/external-storage/lib/controller"
-	"github.com/travisghansen/freenas-iscsi-provisioner/freenas"
+	"github.com/jakekeeys/freenas-iscsi-provisioner/freenas"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/pkg/api/v1"
@@ -442,7 +442,7 @@ func (p *freenasProvisioner) Provision(options controller.VolumeOptions) (*v1.Pe
 	extent := freenas.Extent{
 		Name:           iscsiName,
 		Type:           "Disk",
-		Disk:           "zvol/" + parentDs.Pool + "/" + zvol.Name,
+		Disk:           parentDs.Pool + "/" + zvol.Name,
 		Blocksize:      config.ExtentBlocksize, //config - 512, 1024, 2048, or 4096
 		Pblocksize:     config.ExtentDisablePhysicalBlocksize,
 		AvailThreshold: config.ExtentAvailThreshold,
@@ -460,9 +460,10 @@ func (p *freenasProvisioner) Provision(options controller.VolumeOptions) (*v1.Pe
 	}
 
 	// Create targettoextent
+	lunid := 0
 	targetToExtent := freenas.TargetToExtent{
 		Extent: extent.Id,
-		Lunid:  0,
+		Lunid:  &lunid,
 		Target: target.Id,
 	}
 	err = targetToExtent.Create(freenasServer)
